@@ -92,11 +92,11 @@ jobs:
       with:
         name: demogitactionxamarin-Signed.aab
         path: DemoGitActionXamarin.Android/bin/Release/com.nick.demogitaction.demogitactionxamarin-Signed.aab
-    # - name: Download build artifact
-    #   uses: actions/download-artifact@v3
-    #   with:
-    #     name: demogitactionxamarin-Signed.aab
-    #     path: DemoGitActionXamarin.Android/bin/Release/demogitactionxamarin-Signed.aab
+    - name: Download build artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: demogitactionxamarin-Signed.aab
+        path: DemoGitActionXamarin.Android/bin/Release/demogitactionxamarin-Signed.aab
     # - name: Create service_account.json
     #   id: write_file
     #   uses: timheuer/base64-to-file@v1.1
