@@ -75,28 +75,28 @@ jobs:
 
     - name: Build
       run: MSBuild /t:SignAndroidPackage $ANDROID_CSPROJ /p:Configuration=Release /p:AndroidPackageFormat=aab /p:OutputPath=bin/Release/
-    - name: Sign app aab 
-      uses: r0adkll/sign-android-release@v1
-      id: sign_app
-      with:
-        releaseDirectory: DemoGitActionXamarin.Android/bin/Release
-        signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-        alias: ${{ secrets.ALIAS }}
-        keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-        # keyStorePassword: 123456
-        # keyPassword: ${{ secrets.KEY_PASSWORD }}
-      env:
-        BUILD_TOOLS_VERSION: "30.0.2"
+    # - name: Sign app aab 
+    #   uses: r0adkll/sign-android-release@v1
+    #   id: sign_app
+    #   with:
+    #     releaseDirectory: DemoGitActionXamarin.Android/bin/Release
+    #     signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+    #     alias: ${{ secrets.ALIAS }}
+    #     keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+    #     # keyStorePassword: 123456
+    #     # keyPassword: ${{ secrets.KEY_PASSWORD }}
+    #   env:
+    #     BUILD_TOOLS_VERSION: "30.0.2"
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
         name: demogitactionxamarin-Signed.aab
         path: DemoGitActionXamarin.Android/bin/Release/com.nick.demogitaction.demogitactionxamarin-Signed.aab
-    - name: Download build artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: demogitactionxamarin-Signed.aab
-        path: DemoGitActionXamarin.Android/bin/Release/demogitactionxamarin-Signed.aab
+    # - name: Download build artifact
+    #   uses: actions/download-artifact@v3
+    #   with:
+    #     name: demogitactionxamarin-Signed.aab
+    #     path: DemoGitActionXamarin.Android/bin/Release/demogitactionxamarin-Signed.aab
     - name: Create service_account.json
       id: write_file
       uses: timheuer/base64-to-file@v1.1
