@@ -97,17 +97,18 @@ jobs:
     #   with:
     #     name: demogitactionxamarin-Signed.aab
     #     path: DemoGitActionXamarin.Android/bin/Release/demogitactionxamarin-Signed.aab
-    - name: Create service_account.json
-      id: write_file
-      uses: timheuer/base64-to-file@v1.1
-      with:
-        fileName: service_account.json
-        fileDir: ./DemoGitActionXamarin.Android/bin/key
-        encodedString: ${{ secrets.GCP_CREDENTIALS }}
+    # - name: Create service_account.json
+    #   id: write_file
+    #   uses: timheuer/base64-to-file@v1.1
+    #   with:
+    #     fileName: service_account.json
+    #     fileDir: ./DemoGitActionXamarin.Android/bin/key
+    #     encodedString: ${{ secrets.GCP_CREDENTIALS }}
     - name: Publish app to play store
       uses: r0adkll/upload-google-play@v1
       with:
-        serviceAccountJson: DemoGitActionXamarin.Android/bin/key/service_account.json
+        # serviceAccountJson: DemoGitActionXamarin.Android/bin/key/service_account.json
+        serviceAccountJsonPlainText : ${{ secrets.GCP_CREDENTIALS }}
         packageName: com.nick
         releaseFile: DemoGitActionXamarin.Android/bin/Release/demogitactionxamarin-Signed.aab
         track: internal
