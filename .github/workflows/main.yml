@@ -110,7 +110,7 @@ jobs:
       uses: r0adkll/upload-google-play@v1
       with:
         # serviceAccountJson: DemoGitActionXamarin.Android/bin/key/service_account.json
-        serviceAccountJson : ${{ secrets.SERVICEACCOUNTJSON }}
+        serviceAccountJsonPlainText : ${{ secrets.SERVICEACCOUNTJSON }}
         packageName: com.nick
         releaseFile: DemoGitActionXamarin.Android/bin/Release/demogitactionxamarin-Signed.aab
         track: internal
