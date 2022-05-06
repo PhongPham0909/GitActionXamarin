@@ -13,7 +13,7 @@ env:
 jobs:
   build:
     name: android
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -25,3 +25,4 @@ jobs:
         packageName: com.nick
         releaseFile: com.nick.demogitaction.demogitactionxamarin-Signed.aab
         track: internal
+        userFraction: 0.50
