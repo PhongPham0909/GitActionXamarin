@@ -21,7 +21,7 @@ jobs:
       with:
         # serviceAccountJson: DemoGitActionXamarin.Android/bin/key/service_account.json
         serviceAccountJsonPlainText : ${{ secrets.SERVICEACCOUNTJSON }}
-        packageName: com.nick
-        releaseFile: com.nick.demogitaction.demogitactionxamarin-Signed.aab
+        packageName: com.companyname
+        releaseFile: com.companyname.phonggitaction.aab
         track: internal
         userFraction: 0.50
