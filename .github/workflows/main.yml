@@ -15,8 +15,6 @@ jobs:
     name: android
     runs-on: macos-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
     - name: Publish app to play store
       uses: r0adkll/upload-google-play@v1
       with:
